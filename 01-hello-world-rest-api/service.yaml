@@ -1,21 +1,21 @@
 apiVersion: v1
 kind: Service
 metadata:
-  creationTimestamp: "2021-01-11T17:18:23Z"
+  creationTimestamp: "2021-01-11T20:58:49Z"
   finalizers:
   - service.kubernetes.io/load-balancer-cleanup
   labels:
     app: hello-world-rest-api
   name: hello-world-rest-api
   namespace: default
-  resourceVersion: "4798"
+  resourceVersion: "61931"
   selfLink: /api/v1/namespaces/default/services/hello-world-rest-api
-  uid: 5f2de585-3906-4ced-b237-866e1e84a3a3
+  uid: 51a8f1b4-0b53-41df-8073-1ba66ddb7c5a
 spec:
-  clusterIP: 10.96.7.221
+  clusterIP: 10.96.15.143
   externalTrafficPolicy: Cluster
   ports:
-  - nodePort: 31736
+  - nodePort: 31157
     port: 8080
     protocol: TCP
     targetPort: 8080
@@ -26,4 +26,4 @@ spec:
 status:
   loadBalancer:
     ingress:
-    - ip: 104.198.56.203
+    - ip: 34.66.27.16

@@ -2,16 +2,18 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    deployment.kubernetes.io/revision: "6"
-  creationTimestamp: "2021-01-11T17:15:15Z"
-  generation: 7
+    deployment.kubernetes.io/revision: "3"
+    kubernetes.io/change-cause: kubectl set image deployment hello-world-rest-api
+      hello-world-rest-api=in28min/hello-world-rest-api:0.0.4-SNAPSHOT --record=true
+  creationTimestamp: "2021-01-11T20:57:40Z"
+  generation: 4
   labels:
     app: hello-world-rest-api
   name: hello-world-rest-api
   namespace: default
-  resourceVersion: "57198"
+  resourceVersion: "63396"
   selfLink: /apis/apps/v1/namespaces/default/deployments/hello-world-rest-api
-  uid: aa2fa769-a87b-4ea1-b4b8-d7aa76ace593
+  uid: 5cb44a2e-7c86-457a-9ae0-4ee90f0c20b6
 spec:
   progressDeadlineSeconds: 600
   replicas: 3
@@ -31,7 +33,7 @@ spec:
         app: hello-world-rest-api
     spec:
       containers:
-      - image: DUMMY:TEST
+      - image: in28min/hello-world-rest-api:0.0.4-SNAPSHOT
         imagePullPolicy: IfNotPresent
         name: hello-world-rest-api
         resources: {}
@@ -45,20 +47,19 @@ spec:
 status:
   availableReplicas: 3
   conditions:
-  - lastTransitionTime: "2021-01-11T18:54:34Z"
-    lastUpdateTime: "2021-01-11T18:54:34Z"
+  - lastTransitionTime: "2021-01-11T21:01:20Z"
+    lastUpdateTime: "2021-01-11T21:01:20Z"
     message: Deployment has minimum availability.
     reason: MinimumReplicasAvailable
     status: "True"
     type: Available
-  - lastTransitionTime: "2021-01-11T17:15:15Z"
-    lastUpdateTime: "2021-01-11T20:41:28Z"
-    message: ReplicaSet "hello-world-rest-api-5f5fdfd855" is progressing.
-    reason: ReplicaSetUpdated
+  - lastTransitionTime: "2021-01-11T20:57:40Z"
+    lastUpdateTime: "2021-01-11T21:04:34Z"
+    message: ReplicaSet "hello-world-rest-api-844cc65679" has successfully progressed.
+    reason: NewReplicaSetAvailable
     status: "True"
     type: Progressing
-  observedGeneration: 7
+  observedGeneration: 4
   readyReplicas: 3
-  replicas: 4
-  unavailableReplicas: 1
-  updatedReplicas: 1
+  replicas: 3
+  updatedReplicas: 3
